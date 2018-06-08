@@ -1,52 +1,49 @@
-[![Build Status](https://travis-ci.org/EOSIO/eosjs-api.svg?branch=master)](https://travis-ci.org/EOSIO/eosjs-api)
-[![NPM](https://img.shields.io/npm/v/eosjs-api.svg)](https://www.npmjs.org/package/eosjs-api)
+# Enu API
 
-# Eos API
-
-Application programming interface to EOS blockchain nodes.  This is for
+Application programming interface to Enumivo blockchain nodes.  This is for
 read-only API calls.  If you need to sign transactions use
-[eosjs](https://github.com/eosio/eosjs) instead.
+[enujs](https://github.com/enumivo/enujs) instead.
 
 # Requirements
 
-## EosApi
+## EnuApi
 
-Run [nodeos](https://github.com/eosio/eos)
+Run [enunode](https://github.com/enumivo/enumivo)
 
 ## Usage
 
 ```javascript
-EosApi = require('eosjs-api') // Or EosApi = require('./src')
+EnuApi = require('enujs-api') // Or EnuApi = require('./src')
 
-eos = EosApi() // // 127.0.0.1:8888
+enu = EnuApi() // // 127.0.0.1:8888
 
 // Any API call without a callback parameter will print documentation: description,
 // parameters, return value, and possible errors.  All methods and documentation
-// are created from JSON files in eosjs/json/api/v1..
-eos.getInfo()
+// are created from JSON files in enujs/json/api/v1..
+enu.getInfo()
 
 // A Promise is returned if a callback is not provided.
-eos.getInfo({}).then(result => console.log(result))
-eos.getBlock(1).then(result => console.log(result))
+enu.getInfo({}).then(result => console.log(result))
+enu.getBlock(1).then(result => console.log(result))
 
 // For callbacks instead of Promises provide a callback
 callback = (err, res) => {err ? console.error(err) : console.log(res)}
 
 // The server does not expect any parameters only the callback is needed
-eos.getInfo(callback)
+enu.getInfo(callback)
 
 // Parameters are added before the callback
-eos.getBlock(1, callback)
+enu.getBlock(1, callback)
 
 // Parameters can be an object
-eos.getBlock({block_num_or_id: 1}, callback)
-eos.getBlock({block_num_or_id: 1}).then(result => console.log(result))
+enu.getBlock({block_num_or_id: 1}, callback)
+enu.getBlock({block_num_or_id: 1}).then(result => console.log(result))
 ```
 
 ## Configuration
 
 ```js
-EosApi = require('eosjs-api') // Or EosApi = require('./src')
+EnuApi = require('enujs-api') // Or EnuApi = require('./src')
 
 // everything is optional
 options = {
@@ -60,7 +57,7 @@ options = {
   fetchConfiguration: {}
 }
 
-eos = EosApi(options)
+enu = EnuApi(options)
 ```
 ### options.logger example
 
@@ -81,7 +78,7 @@ options.fetchConfiguration = {
   credentials: 'same-origin'
 }
 ```
-Every eosjs-api request will run [fetch](https://github.com/github/fetch#sending-cookies) with this configuration:
+Every enujs-api request will run [fetch](https://github.com/github/fetch#sending-cookies) with this configuration:
 ```js
 fetch('https://example.com', {
   credentials: 'same-origin'
@@ -91,8 +88,8 @@ fetch('https://example.com', {
 ## API Documentation
 
 API methods and documentation are generated from:
-* [chain.json](https://github.com/EOSIO/eosjs-api/blob/master/src/api/v1/chain.json)
-* [history.json](https://github.com/EOSIO/eosjs-api/blob/master/src/api/v1/history.json)
+* [chain.json](https://github.com/enumivo/enujs-api/blob/master/src/api/v1/chain.json)
+* [history.json](https://github.com/enumivo/enujs-api/blob/master/src/api/v1/history.json)
 
 Helper functions:
 * [./docs/index.md](./docs/index.md)

@@ -35,7 +35,7 @@ module.exports = {
   @arg {number} expireInSeconds - How many seconds until expiration
   @arg {function(error, headers)} callback {@link headers}
   @see {headers}
-  @example eos.createTransaction(60, (error, headers) => {})
+  @example enu.createTransaction(60, (error, headers) => {})
 */
 function createTransaction(api, expireInSeconds = 60, callback) {
   if(!callback) {

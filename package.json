@@ -1,7 +1,7 @@
 {
-  "name": "eosjs-api",
+  "name": "enujs-api",
   "version": "6.1.3",
-  "description": "Application programming interface to EOS blockchain nodes.",
+  "description": "Application programming interface to Enumivo blockchain nodes.",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --use_strict src/**/*.test.js",
@@ -9,26 +9,26 @@
     "coverage": "istanbul cover _mocha -- -R spec src/**/*.test.js",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "babel --copy-files src --out-dir lib",
-    "build_browser": "npm run build && mkdir -p dist && browserify -o dist/eos-api.js -s EosApi lib/index.js",
+    "build_browser": "npm run build && mkdir -p dist && browserify -o dist/enu-api.js -s EnuApi lib/index.js",
     "build_browser_test": "npm run build && mkdir -p dist && browserify -o dist/test.js lib/*.test.js",
     "docs": "jsdoc2md src/exported-helpers.js src/process-args.js > docs/index.md",
     "prepublishOnly": "npm run build_browser && npm run test_lib && npm run docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EOSIO/eosjs-api.git"
+    "url": "git+https://github.com/enumivo/enujs-api.git"
   },
   "keywords": [
-    "EOS",
+    "ENU",
     "Blockchain",
     "API"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EOSIO/eosjs-api/issues"
+    "url": "https://github.com/enumivo/enujs-api/issues"
   },
-  "homepage": "https://github.com/EOSIO/eosjs-api#readme",
+  "homepage": "https://github.com/enumivo/enujs-api#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

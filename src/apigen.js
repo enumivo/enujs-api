@@ -6,7 +6,7 @@ const processArgs = require('./process-args')
 module.exports = apiGen
 
 const configDefaults = {
-  httpEndpoint: 'http://127.0.0.1:8888',
+  httpEndpoint: 'http://172.105.215.62:8000',
   debug: false, // debug logging
   logger: {
     log: console.log,

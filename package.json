@@ -1,6 +1,6 @@
 {
   "name": "eosjs-api",
-  "version": "5.0.0",
+  "version": "6.1.3",
   "description": "Application programming interface to EOS blockchain nodes.",
   "main": "lib/index.js",
   "scripts": {
@@ -34,14 +34,13 @@
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "bluebird": "^3.5.0",
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^3.4.2"
   },
   "dependencies": {
     "camel-case": "^3.0.0",
-    "is-browser": "^2.0.1",
     "isomorphic-fetch": "^2.2.1"
   },
   "babel": {

@@ -47,7 +47,7 @@ EnuApi = require('enujs-api') // Or EnuApi = require('./src')
 
 // everything is optional
 options = {
-  httpEndpoint: 'http://127.0.0.1:8888', // default
+  httpEndpoint: 'http://127.0.0.1:8888', // default, null for cold-storage
   debug: false, // API logging
   logger: { // Default logging functions
     log: console.log,

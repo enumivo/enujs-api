@@ -7,7 +7,7 @@ module.exports = apiGen
 
 function apiGen (version, definitions, config) {
   config = Object.assign({
-    httpEndpoint: 'http://172.104.182.81:8000',
+    httpEndpoint: 'https:/api.enumivo.org',
     verbose: false
   }, config)
 

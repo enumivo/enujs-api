@@ -18,7 +18,7 @@
     "build_browser_test": "npm run build && browserify -o dist/test.js lib/*.test.js",
     "minimize": "uglifyjs lib/enu-api.js -o lib/enu-api.min.js --source-map --compress --mangle",
     "docs": "jsdoc2md src/exported-helpers.js src/process-args.js > docs/index.md",
-    "srisum": "npx srisum lib/eos-api.*",
+    "srisum": "npx srisum lib/enu-api.*",
     "prepublishOnly": "npm run build_browser && npm run test_lib && npm run minimize && npm run docs && npm run srisum"
   },
   "repository": {

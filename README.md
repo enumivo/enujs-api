@@ -4,8 +4,6 @@ Application programming interface to Enumivo blockchain nodes.  This is for
 read-only API calls.  If you need to sign transactions use
 [enujs](https://github.com/enumivo/enujs) instead.
 
-# Requirements
-
 ## EnuApi
 
 Run [enunode](https://github.com/enumivo/enumivo)

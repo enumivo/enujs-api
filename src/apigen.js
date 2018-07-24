@@ -5,18 +5,26 @@ const processArgs = require('./process-args')
 
 module.exports = apiGen
 
-function apiGen (version, definitions, config) {
-  config = Object.assign({
-    httpEndpoint: 'https:/api.enumivo.org',
-    verbose: false
-  }, config)
-
-  const defaultLogger = {
-    log: config.verbose ? console.log : '',
-    error: console.error
+function apiGen (version, definitions, config = {}) {
+  const configDefaults = {
+    httpEndpoint: 'https://api.enumivo.org',
+    verbose: false,
+    logger: {
+      log: (...args) => config.verbose ? console.log(...args) : '',
+      error: console.error
+    }
   }
 
-  config.logger = Object.assign({}, defaultLogger, config.logger)
+  function applyDefaults(target, defaults) {
+    Object.keys(defaults).forEach(key => {
+      if(target[key] === undefined) {
+        target[key] = defaults[key]
+      }
+    })
+  }
+
+  applyDefaults(config, configDefaults)
+  applyDefaults(config.logger, configDefaults.logger)
 
   const api = {}
   const {httpEndpoint} = config

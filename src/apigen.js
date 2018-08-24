@@ -7,7 +7,7 @@ module.exports = apiGen
 
 function apiGen (version, definitions, config = {}) {
   const configDefaults = {
-    httpEndpoint: 'http://127.0.0.1:8888',
+    httpEndpoint: 'https://api.enumivo.com',
     verbose: false,
     logger: {
       log: (...args) => config.verbose ? console.log(...args) : null,

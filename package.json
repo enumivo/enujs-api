@@ -23,7 +23,6 @@
     "docs": "npm run apiDocs && npm run helperDocs",
     "srisum": "npx srisum lib/enu-api.*",
     "prepublishOnly": "npm run build && npm run test_lib && npm run minimize && npm run srisum"
-    /*"prepublishOnly": "npm run build && npm run test_lib && npm run minimize && npm run docs && npm run srisum"*/
   },
   "repository": {
     "type": "git",

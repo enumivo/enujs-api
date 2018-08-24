@@ -4,6 +4,25 @@ Application programming interface to Enumivo blockchain nodes.  This is for
 read-only API calls.  If you need to sign transactions use
 [enujs](https://github.com/enumivo/enujs) instead.
 
+# Include
+
+* Install with: `npm install enujs-api`
+* Html script tag, see [releases](https://github.com/enumivo/enujs-api/releases) for the correct **version** and its matching script **integrity** hash.
+
+```html
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/enujs-api@7.0.4/lib/enu-api.min.js"
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+  See console object: EnuApi
+</body>
+</html>
+```
+
 ## EnuApi
 
 Run [enunode](https://github.com/enumivo/enumivo)

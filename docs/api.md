@@ -459,10 +459,10 @@ Retrieve a transaction from the blockchain.
 
 **Kind**: static method of [<code>enu</code>](#enu)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| id | <code>transaction_id_type</code> |  |  |
-| [block_num_hint] | <code>uint32</code> | <code>0</code> | A non-zero block number allows shorter transaction IDs (8 hex, 4 bytes) |
+| Param | Type |
+| --- | --- |
+| id | <code>transaction_id_type</code> | 
+| [block_num_hint] | <code>uint32</code> | 
 
 **Example**  
 ```js

@@ -10,8 +10,8 @@ function apiGen (version, definitions, config = {}) {
     httpEndpoint: 'https://api.enumivo.org',
     verbose: false,
     logger: {
-      log: (...args) => config.verbose ? console.log(...args) : '',
-      error: console.error
+      log: (...args) => config.verbose ? console.log(...args) : null,
+      error: (...args) => config.verbose ? console.error(...args) : null
     }
   }
 
@@ -40,7 +40,7 @@ function apiGen (version, definitions, config = {}) {
     // Insert `api` as the first parameter to all API helpers
     api[helper] = (...args) => helpers.api[helper](api, ...args)
   }
-  return Object.assign(api, helpers)
+  return api
 }
 
 function fetchMethod (methodName, url, definition, config) {

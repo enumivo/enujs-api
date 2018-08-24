@@ -8,6 +8,9 @@ read-only API calls.  If you need to sign transactions use
 
 Run [enunode](https://github.com/enumivo/enumivo)
 
+* [API](./docs/api.md)
+* [Helper Functions](./docs/index.md)
+
 ## Usage
 
 ```javascript
@@ -48,8 +51,8 @@ options = {
   httpEndpoint: 'http://127.0.0.1:8888', // default, null for cold-storage
   verbose: false, // API logging
   logger: { // Default logging functions
-    log: config.verbose ? console.log : '',
-    error: console.error
+    log: config.verbose ? console.log : null,
+    error: config.verbose ? console.error : null
   },
   fetchConfiguration: {}
 }
@@ -64,6 +67,7 @@ During testing, an error may be expected and checked as follows:
 options.logger = {
   error: err => {
     assert.equal(err, 'expected error')
+    done()
   }
 }
 ```
@@ -81,15 +85,6 @@ fetch('https://example.com', {
   credentials: 'same-origin'
 })
 ```
-
-## API Documentation
-
-API methods and documentation are generated from:
-* [chain.json](https://github.com/enumivo/enujs-api/blob/master/src/api/v1/chain.json)
-* [history.json](https://github.com/enumivo/enujs-api/blob/master/src/api/v1/history.json)
-
-Helper functions:
-* [./docs/index.md](./docs/index.md)
 
 ## Environment
 
